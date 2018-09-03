@@ -1,0 +1,22 @@
+<aside toggle-nav>
+    <span class="toggle-icon">
+        <i class="icon-aw-angle-double-right"></i>
+    </span>
+    <ul class="menu-level-1">
+        <li *ngFor="let item of sideMenu.sideMenuList" [ngClass]="{'level2-active':sideMenu.activeSubMenu==item.keywords,'active':checkActive(item),'has-child':item.child.length>0}">
+        <a routerLink='{{item.href}}'>
+            <span ng-click="sideMenu.activeSubMenu=item.keywords"><i class=""></i><b>{{item.text}}</b></span>
+            <i class="icon-arrow" ng-if="item.child.length>0" ng-click="sideMenu.activeSubMenu=item.keywords"></i>
+        </a>
+        <a class="close-show-title" ng-if="item.child.length<1" routerLink='/'>{{item.text}}</a>
+        <ul class="menu-level-2" ng-if="item.child.length>0">
+            <li *ngFor="let subItem of item.child">
+            <a [ngClass]="{'sub-active':sideMenu.menuKeyword==subItem.active}"  routerLink='/'>
+                <span><i class="pointer"></i>{{subItem.text}}</span>
+            </a>
+            </li>
+        </ul>
+        </li>
+    </ul>
+</aside>
+
