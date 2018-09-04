@@ -6,7 +6,6 @@ import {HeaderComponent} from './header'
 import {SideComponent} from './side'
 import { Routes, RouterModule } from '@angular/router';
 import {TagComponent} from './tag';
-import {RouteComponent} from './route';
 export const ROUTES: Routes = [
   {
     path:"config/configmanage",component:TagComponent
@@ -16,11 +15,12 @@ export const ROUTES: Routes = [
   declarations: [
     AppComponent,
     HeaderComponent,
-    SideComponent
+    SideComponent,
+    TagComponent
   ],
   imports: [
     BrowserModule,
-    RouteComponent
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]

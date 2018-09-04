@@ -13,6 +13,9 @@ export class SideComponent {
     subMenuTitle: "", //当前页面在右侧显示的标题
     menuKeyword: ""
   }
+  toggle(item){
+    this.sideMenu.activeSubMenu==item.keywords?this.sideMenu.activeSubMenu="":this.sideMenu.activeSubMenu=item.keywords;
+  }
   changPassword(){
     console.log(123);
   }
