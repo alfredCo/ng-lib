@@ -4,14 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {HeaderComponent} from './header'
 import {SideComponent} from './side'
-import { Routes, RouterModule } from '@angular/router';
-import {TagComponent} from './tag';
 import {RouteComponent} from './route';
-export const ROUTES: Routes = [
-  {
-    path:"config/configmanage",component:TagComponent
-  }
-];
+import {HttpModule} from '@angular/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +15,8 @@ export const ROUTES: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouteComponent
+    RouteComponent,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
