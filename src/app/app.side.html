@@ -9,7 +9,7 @@
                 <i class="icon-arrow"></i>
             </a>
             <a *ngIf="item.href" routerLink='{{item.href}}' routerLinkActive="active">
-                <span (click)="sideMenu.activeSubMenu=item.keywords"><i class=""></i><b>{{item.text}}</b></span>
+                <span (click)="sideMenu.activeSubMenu=item.keywords"><i class="{{item.icon}}"></i><b>{{item.text}}</b></span>
             </a>
             <a class="close-show-title" *ngIf="item.child.length<1" routerLink='{{item.href}}'>{{item.text}}</a>
             <ul class="menu-level-2" *ngIf="item.child.length>0">
