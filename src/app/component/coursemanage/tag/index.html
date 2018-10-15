@@ -23,14 +23,16 @@
         <td>{{item.routeDescription}}</td>
       </tr>
     </table>
-    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm,myForm.value)">
       <div class="control-group">
         <label class="control-label">ddd</label>
         <div class="controls">
           <input type="text" formControlName="number" [formControl]="myForm.controls['number']">
         </div>
+        
       </div>
       <button type="submit" class="btn btn-primary" >submit</button>
     </form>
+    {{myForm.controls['number'].value}}
   </div>
 </div>
