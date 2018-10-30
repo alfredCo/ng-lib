@@ -6,7 +6,7 @@ import * as view from './component/';
 import {AppTestComponent} from './app.test';
 import {HeaderComponent} from './header'
 import {SideComponent} from './side'
-
+import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 
 const ROUTES: Routes = [
   {
@@ -34,7 +34,8 @@ const ROUTES: Routes = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(ROUTES)
+    NgZorroAntdModule,
+    RouterModule.forRoot(ROUTES, { useHash: true })
   ],
   providers:[view.TagService],
   exports: [RouterModule]

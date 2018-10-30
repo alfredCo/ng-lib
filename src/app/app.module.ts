@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import  AppComponent  from './app.component';
+import  {AppComponent}  from './app.component';
 // import {HeaderComponent} from './header'
 // import {SideComponent} from './side'
 import {RouteComponent} from './route';
@@ -22,6 +22,6 @@ import {InterceptorService} from './http.InterceptorService';
   providers: [{provide:HTTP_INTERCEPTORS,useClass:InterceptorService,multi:true}],
   bootstrap: [AppComponent]
 })
-export default class AppModule {
+export  class AppModule {
   aaa = 0;
  }
